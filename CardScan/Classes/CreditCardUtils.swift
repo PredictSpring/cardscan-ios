@@ -7,9 +7,7 @@ public struct CreditCardUtils {
     static func luhnCheck(_ cardNumber: String) -> Bool {
         if cardNumber.count == 0 {
             return false
-        } else if !isPLCC(number: cardNumber) {
-            return false
-        } else if !isValidBin(number: cardNumber) {
+        } else if !isPLCC(number: cardNumber) || !isValidBin(number: cardNumber) {
             return false
         }
         var sum = 0
