@@ -60,11 +60,8 @@ import Vision
         self.videoFeed.toggleTorch()
     }
     
-    @objc static public func configure(apiKey: String? = nil) {
-        if let apiKey = apiKey {
-            Api.apiKey = apiKey
-        }
-        
+    @objc static public func configure(regex: String) {
+        CreditCardUtils.regex = regex
         self.machineLearningQueue.async {
             if #available(iOS 11.2, *) {
                 registerAppNotifications()
