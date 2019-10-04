@@ -60,7 +60,7 @@ import Vision
         self.videoFeed.toggleTorch()
     }
     
-    @objc static public func configure(regex: String) {
+    @objc static public func configure(regex: String?) {
         CreditCardUtils.regex = regex
         self.machineLearningQueue.async {
             if #available(iOS 11.2, *) {
