@@ -105,11 +105,11 @@ import UIKit
     @IBOutlet weak var cardNumberLabel: UILabel!
     @IBOutlet weak var blurView: BlurView!
     
-    @IBOutlet weak var scanCardLabel: UILabel!
-    @IBOutlet weak var positionCardLabel: UILabel!
-    @IBOutlet weak var skipButton: UIButton!
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var backButtonImageButton: UIButton!
+    @IBOutlet public var scanCardLabel: UILabel!
+    @IBOutlet public var positionCardLabel: UILabel!
+    @IBOutlet public var skipButton: UIButton!
+    @IBOutlet public var backButton: UIButton!
+    @IBOutlet public var backButtonImageButton: UIButton!
     
     @IBOutlet weak var debugImageView: UIImageView!
     @IBOutlet weak var previewView: PreviewView!
