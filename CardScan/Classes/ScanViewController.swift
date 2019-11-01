@@ -105,6 +105,11 @@ import UIKit
     @IBOutlet weak var cardNumberLabel: UILabel!
     @IBOutlet weak var blurView: BlurView!
     
+    public var scanCardLabelText: String = ""
+    public var positionCardLabelText: String = ""
+    public var skipButtonText: String = ""
+    public var backButtonText: String = ""
+    
     @IBOutlet var scanCardLabel: UILabel! {
         didSet {
             scanCardLabel.text = scanCardLabelText
@@ -117,12 +122,12 @@ import UIKit
     }
     @IBOutlet var skipButton: UIButton! {
         didSet {
-            skipButton.setTitle(skipButtonText, .normal)
+            skipButton.setTitle(skipButtonText, for: .normal)
         }
     }
     @IBOutlet public var backButton: UIButton! {
         didSet {
-            backButton.setTitle(backButtonText, .normal)
+            backButton.setTitle(backButtonText, for: .normal)
         }
     }
     @IBOutlet public var backButtonImageButton: UIButton!
