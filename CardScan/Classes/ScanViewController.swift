@@ -105,10 +105,26 @@ import UIKit
     @IBOutlet weak var cardNumberLabel: UILabel!
     @IBOutlet weak var blurView: BlurView!
     
-    @IBOutlet public var scanCardLabel: UILabel!
-    @IBOutlet public var positionCardLabel: UILabel!
-    @IBOutlet public var skipButton: UIButton!
-    @IBOutlet public var backButton: UIButton!
+    @IBOutlet var scanCardLabel: UILabel! {
+        didSet {
+            scanCardLabel.text = scanCardLabelText
+        }
+    }
+    @IBOutlet var positionCardLabel: UILabel! {
+        didSet {
+            positionCardLabel.text = positionCardLabelText
+        }
+    }
+    @IBOutlet var skipButton: UIButton! {
+        didSet {
+            skipButton.setTitle(skipButtonText, .normal)
+        }
+    }
+    @IBOutlet public var backButton: UIButton! {
+        didSet {
+            backButton.setTitle(backButtonText, .normal)
+        }
+    }
     @IBOutlet public var backButtonImageButton: UIButton!
     
     @IBOutlet weak var debugImageView: UIImageView!
@@ -181,11 +197,6 @@ import UIKit
         guard let dataSource = self.stringDataSource else {
             return
         }
-        
-        self.scanCardLabel.text = dataSource.scanCard()
-        self.positionCardLabel.text = dataSource.positionCard()
-        self.skipButton.setTitle(dataSource.skipButton(), for: .normal)
-        self.backButton.setTitle(dataSource.backButton(), for: .normal)
         
         guard let fullDataSource = dataSource as? FullScanStringsDataSource else {
             return
